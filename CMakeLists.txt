@@ -7,6 +7,12 @@ include(cmake/options.cmake)
 
 enable_testing()
 
+add_library(ray-tracing-lib STATIC src/bitmap.cxx)
+
+target_include_directories(ray-tracing-lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+
+target_compile_features(ray-tracing-lib PUBLIC cxx_std_23)
+
 add_executable(ray-tracing-in-one-weekend src/main.cxx)
 
 target_compile_features(ray-tracing-in-one-weekend PUBLIC cxx_std_23)

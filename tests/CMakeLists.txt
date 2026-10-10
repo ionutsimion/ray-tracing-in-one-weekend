@@ -6,7 +6,12 @@ include(Catch)
 
 add_executable(ray-tracing-in-one-weekend-unit-tests unit/main.cxx)
 
-target_link_libraries(ray-tracing-in-one-weekend-unit-tests PRIVATE Catch2::Catch2)
+target_link_libraries(
+        ray-tracing-in-one-weekend-unit-tests
+            PRIVATE
+                Catch2::Catch2
+                ray-tracing-lib
+)
 
 target_compile_features(ray-tracing-in-one-weekend-unit-tests PRIVATE cxx_std_23)
 
