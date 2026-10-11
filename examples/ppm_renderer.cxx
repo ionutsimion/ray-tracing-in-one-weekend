@@ -7,8 +7,8 @@
 
 int main(int const, const char* const[])
 {
-    auto constexpr image_width = 64;
-    auto constexpr image_height = 64;
+    auto constexpr image_width = 512;
+    auto constexpr image_height = 512;
 
     pi::Bitmap bitmap(image_width, image_height);
     for (auto row = 0; row < image_height; ++row)
@@ -19,7 +19,7 @@ int main(int const, const char* const[])
             auto const r = static_cast<pi::real>(col) / static_cast<pi::real>(image_width - 1);
             bitmap[row, col, pi::Channel::Red] = static_cast<std::uint8_t>(r * 255.0);
             bitmap[row, col, pi::Channel::Green] = static_cast<std::uint8_t>(g * 255.0);
-            bitmap[row, col, pi::Channel::Blue] = static_cast<std::uint8_t>(std::sqrt(r * g * 255.0));
+            bitmap[row, col, pi::Channel::Blue] = static_cast<std::uint8_t>(std::sqrt(r * g) * 255.0);
         }
     }
 
