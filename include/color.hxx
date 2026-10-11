@@ -2,8 +2,6 @@
 #define RAY_TRACING_IN_ONE_WEEKEND_COLOR_HXX
 
 #include <concepts>
-#include <stdexcept>
-#include <type_traits>
 
 #include <types.hxx>
 

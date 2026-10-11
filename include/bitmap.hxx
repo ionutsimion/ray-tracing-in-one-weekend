@@ -22,7 +22,7 @@ namespace pi
         unsigned const width_;
         unsigned const height_;
 
-        std::unique_ptr<std::uint8_t []> bitmap_{};
+        std::unique_ptr<std::uint8_t[]> bitmap_{};
     };
 
 }
