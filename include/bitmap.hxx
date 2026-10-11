@@ -18,6 +18,9 @@ namespace pi
         std::uint8_t &operator [](unsigned row, unsigned column, Channel channel);
         Color operator [](unsigned row, unsigned column) const;
 
+        [[nodiscard]] auto width() const noexcept -> unsigned;
+        [[nodiscard]] auto height() const noexcept -> unsigned;
+
     private:
         unsigned const width_;
         unsigned const height_;

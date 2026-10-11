@@ -7,7 +7,11 @@ include(cmake/options.cmake)
 
 enable_testing()
 
-add_library(ray-tracing-lib STATIC src/bitmap.cxx)
+add_library(
+        ray-tracing-lib
+        STATIC
+            src/bitmap.cxx
+            src/renderers/ppm_renderer.cxx)
 
 target_include_directories(ray-tracing-lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 

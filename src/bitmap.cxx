@@ -26,3 +26,13 @@ pi::Color pi::Bitmap::operator[](unsigned const row, unsigned const column) cons
       , bitmap_[pointer + 2u] / 255.0
     };
 }
+
+auto pi::Bitmap::width() const noexcept -> unsigned
+{
+    return width_;
+}
+
+auto pi::Bitmap::height() const noexcept -> unsigned
+{
+    return height_;
+}
