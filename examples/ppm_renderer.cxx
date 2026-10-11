@@ -1,4 +1,4 @@
-#include "renderers/ppm_renderer.hxx"
+#include <renderers/ppm_renderer.hxx>
 
 #include <cmath>
 #include <iostream>
@@ -13,7 +13,6 @@ int main(int const argc, const char* const argv[])
     auto constexpr image_height = 512;
 
     pi::Bitmap bitmap(image_width, image_height);
-    //*
     for (auto row = 0; row < image_height; ++row)
     {
         auto const g = static_cast<pi::real>(row) / static_cast<pi::real>(image_height - 1);
@@ -25,7 +24,6 @@ int main(int const argc, const char* const argv[])
             bitmap[row, col, pi::Channel::Blue] = static_cast<std::uint8_t>(std::sqrt(r * g) * 255.0);
         }
     }
-    //*/
 
     std::ofstream os{};
     if (argc > 1)

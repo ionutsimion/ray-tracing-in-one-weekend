@@ -4,7 +4,7 @@ list(APPEND CMAKE_MODULE_PATH ${Catch2_SOURCE_DIR}/extras)
 
 include(Catch)
 
-add_executable(ray-tracing-in-one-weekend-unit-tests unit/main.cxx)
+add_executable(ray-tracing-in-one-weekend-unit-tests main.cxx)
 
 target_link_libraries(
         ray-tracing-in-one-weekend-unit-tests
