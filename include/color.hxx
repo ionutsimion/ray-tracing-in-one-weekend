@@ -10,20 +10,6 @@ namespace pi
 
     struct Color
     {
-        Color(real const red, real const green, real const blue)
-            : r(red)
-            , g(green)
-            , b(blue)
-        {
-        }
-
-        Color(std::uint8_t const red, std::uint8_t const green, std::uint8_t const blue)
-            : r(red)
-            , g(green)
-            , b(blue)
-        {
-        }
-
         real r{};
         real g{};
         real b{};
