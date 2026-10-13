@@ -9,7 +9,7 @@ using namespace std::literals;
 namespace pi
 {
 
-    enum class Channel: std::uint8_t
+    enum class Channel: uint8_t
     {
         Red     = 0u,
         Green   = 1u,

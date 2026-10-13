@@ -22,11 +22,11 @@ auto pi::PPMRenderer::render_frame(Bitmap const &bitmap) const -> void
 
         for (auto col = 0; col < width; ++col)
         {
-            auto const color = bitmap[row, col];
+            auto const [r, g, b] = bitmap[row, col];
 
             std::println(  stream_
                          , "{:d} {:d} {:d}"
-                         , pi::as<std::uint8_t>(color.r), pi::as<std::uint8_t>(color.g), pi::as<std::uint8_t>(color.b));
+                         , static_cast<uint8_t>(r * 255.0), static_cast<uint8_t>(g * 255.0), static_cast<uint8_t>(b * 255.0));
         }
     }
 

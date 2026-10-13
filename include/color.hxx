@@ -3,7 +3,7 @@
 
 #include <concepts>
 
-#include <types.hxx>
+#include <common.hxx>
 
 namespace pi
 {
@@ -13,34 +13,7 @@ namespace pi
         real r{};
         real g{};
         real b{};
-
-        auto set_r(real const red)
-        {
-            r = red;
-        }
-
-        auto set_g(real const green)
-        {
-            g = green;
-        }
-
-        auto set_b(real const blue)
-        {
-            b = blue;
-        }
     };
-
-    template <typename ReturnType>
-    auto as(real const x) -> ReturnType
-    {
-        return static_cast<ReturnType>(x);
-    }
-
-    template <std::integral>
-    auto as(real const x) -> int
-    {
-        return static_cast<int>(x * 255.0);
-    }
 
 }
 

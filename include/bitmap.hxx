@@ -15,7 +15,7 @@ namespace pi
     public:
         Bitmap(unsigned width, unsigned height);
 
-        std::uint8_t &operator [](unsigned row, unsigned column, Channel channel);
+        uint8_t &operator [](unsigned row, unsigned column, Channel channel);
         Color operator [](unsigned row, unsigned column) const;
 
         [[nodiscard]] auto width() const noexcept -> unsigned;
@@ -25,7 +25,7 @@ namespace pi
         unsigned const width_;
         unsigned const height_;
 
-        std::unique_ptr<std::uint8_t[]> bitmap_{};
+        std::unique_ptr<uint8_t[]> bitmap_{};
     };
 
 }

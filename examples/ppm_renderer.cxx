@@ -17,12 +17,12 @@ int main(int const argc, const char* const argv[])
     {
         for (auto col = 0; col < image_width; ++col)
         {
-            pi::Color color{  .r=static_cast<pi::real>(col) / static_cast<pi::real>(image_width - 1)
-                            , .g=static_cast<pi::real>(row) / static_cast<pi::real>(image_height - 1)
-                            , .b=std::sqrt(color.r * color.g) };
-            bitmap[row, col, pi::Channel::Red] = pi::as<std::uint8_t>(color.r);
-            bitmap[row, col, pi::Channel::Green] = pi::as<std::uint8_t>(color.g);
-            bitmap[row, col, pi::Channel::Blue] = pi::as<std::uint8_t>(color.b);
+            auto const r = static_cast<pi::real>(row) / static_cast<pi::real>(image_height - 1);
+            auto const g = static_cast<pi::real>(col) / static_cast<pi::real>(image_width - 1);
+            auto const b = std::sqrt(r * g);
+            bitmap[row, col, pi::Channel::Red] = static_cast<uint8_t>(r * 255.0);
+            bitmap[row, col, pi::Channel::Green] = static_cast<uint8_t>(g * 255.0);
+            bitmap[row, col, pi::Channel::Blue] = static_cast<uint8_t>(b * 255.0);
         }
     }
 
