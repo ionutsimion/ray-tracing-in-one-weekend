@@ -1,7 +1,7 @@
 #ifndef RAY_TRACING_IN_ONE_WEEKEND_RENDERER_HXX
 #define RAY_TRACING_IN_ONE_WEEKEND_RENDERER_HXX
 
-#include <bitmap.hxx>
+#include <lib/bitmap.hxx>
 
 namespace pi
 {

@@ -1,7 +1,6 @@
 #ifndef RAY_TRACING_IN_ONE_WEEKEND_CHANNEL_HXX
 #define RAY_TRACING_IN_ONE_WEEKEND_CHANNEL_HXX
 
-#include <chrono>
 #include <cstdint>
 
 using namespace std::literals;

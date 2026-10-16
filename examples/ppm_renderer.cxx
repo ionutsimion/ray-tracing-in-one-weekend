@@ -4,8 +4,7 @@
 #include <iostream>
 #include <fstream>
 
-#include <bitmap.hxx>
-#include <color.hxx>
+#include <lib/color.hxx>
 
 int main(int const argc, const char* const argv[])
 {
@@ -20,9 +19,9 @@ int main(int const argc, const char* const argv[])
             auto const r = static_cast<pi::real>(row) / static_cast<pi::real>(image_height - 1);
             auto const g = static_cast<pi::real>(col) / static_cast<pi::real>(image_width - 1);
             auto const b = std::sqrt(r * g);
-            bitmap[row, col, pi::Channel::Red] = static_cast<uint8_t>(r * 255.0);
-            bitmap[row, col, pi::Channel::Green] = static_cast<uint8_t>(g * 255.0);
-            bitmap[row, col, pi::Channel::Blue] = static_cast<uint8_t>(b * 255.0);
+            bitmap[row, col, pi::Channel::Red] = pi::to_8bit(r);
+            bitmap[row, col, pi::Channel::Green] = pi::to_8bit(g);
+            bitmap[row, col, pi::Channel::Blue] = pi::to_8bit(b);
         }
     }
 

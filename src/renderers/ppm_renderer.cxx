@@ -1,5 +1,6 @@
 #include <iostream>
 
+#include <lib/bitmap.hxx>
 #include <renderers/ppm_renderer.hxx>
 
 pi::PPMRenderer::PPMRenderer(std::ostream &stream) noexcept
@@ -22,11 +23,9 @@ auto pi::PPMRenderer::render_frame(Bitmap const &bitmap) const -> void
 
         for (auto col = 0; col < width; ++col)
         {
-            auto const [r, g, b] = bitmap[row, col];
+            auto const [r, g, b] = to_8bit(bitmap[row, col]);
 
-            std::println(  stream_
-                         , "{:d} {:d} {:d}"
-                         , static_cast<uint8_t>(r * 255.0), static_cast<uint8_t>(g * 255.0), static_cast<uint8_t>(b * 255.0));
+            std::println(stream_, "{:d} {:d} {:d}", r, g, b);
         }
     }
 

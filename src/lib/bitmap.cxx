@@ -1,4 +1,4 @@
-#include <bitmap.hxx>
+#include <lib/bitmap.hxx>
 
 pi::Bitmap::Bitmap(unsigned const width, unsigned const height)
     : width_(width)

@@ -1,11 +1,10 @@
 #ifndef RAY_TRACING_IN_ONE_WEEKEND_BITMAP_HXX
 #define RAY_TRACING_IN_ONE_WEEKEND_BITMAP_HXX
 
-#include <cstdint>
 #include <memory>
 
-#include <channel.hxx>
-#include <color.hxx>
+#include <lib/channel.hxx>
+#include <lib/color.hxx>
 
 namespace pi
 {
